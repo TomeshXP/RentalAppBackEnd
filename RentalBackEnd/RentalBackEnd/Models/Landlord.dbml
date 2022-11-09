@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RentalHouse" Class="LandlordDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-TV9872U\SQLEXPRESS02;Initial Catalog=RentalHouse;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RentalHouseConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.[_spLandlordRegistration]" Method="_spLandlordRegistration">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Number" Parameter="number" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Image" Parameter="image" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spAddProperty]" Method="_spAddProperty">
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SqureFeet" Parameter="squreFeet" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RentalCost" Parameter="rentalCost" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LandLordname" Parameter="landLordname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PropertyImage" Parameter="propertyImage" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RentarId" Parameter="rentarId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spPropertyResponse]" Method="_spPropertyResponse">
+    <Parameter Name="RentarId" Parameter="rentarId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_spPropertyResponseResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SqureFeet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RentalCost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RentarId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_spgetMyProperties]" Method="_spgetMyProperties">
+    <Parameter Name="RentarId" Parameter="rentarId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_spgetMyPropertiesResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SqureFeet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RentalCost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RentarId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_spDeletePropery]" Method="_spDeletePropery">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spGetPropertyById]" Method="_spGetPropertyById">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_spGetPropertyByIdResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SqureFeet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RentalCost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RentarId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_spUpdateProperty]" Method="_spUpdateProperty">
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SqureFeet" Parameter="squreFeet" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RentalCost" Parameter="rentalCost" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LandLordName" Parameter="landLordName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PropertyImage" Parameter="propertyImage" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spLandLordLogin]" Method="_spLandLordLogin">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="_spLandLordLoginResult">
+      <Column Name="RentarId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_spBuyerTable]" Method="_spBuyerTable">
+    <Parameter Name="BuyerId" Parameter="buyerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SellerId" Parameter="sellerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LandLordName" Parameter="landLordName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RentAmount" Parameter="rentAmount" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SecurityDeposit" Parameter="securityDeposit" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spGetShowRequest]" Method="_spGetShowRequest">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_spGetShowRequestResult">
+      <Column Name="RentAmount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SecurityDeposit" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
